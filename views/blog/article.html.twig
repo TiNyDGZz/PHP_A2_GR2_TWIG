@@ -1,31 +1,21 @@
-{% extends 'Blog/base.html.twig' %}
+{% extends '_header.html' %}
 
-{% block title %}
-    {{ parent() }} - My Articles
-{% endblock %}
+ <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+ <header>
+    <h1>{{ article['title'] }}</h1>
+    <img title="{{article['title']}}" alt="{{article['title']}}" src="{{article['image']}}">
+    <small>Written by {{article['user_id']}} on {{article['created_at']}}</small>
+ </header>
+     <div class="content">
+     <p>{{article['content']}}</p>
+    </div>
+ <footer>
+    <p>Posted in category: <a href="/article?id{{article['category_id']}}">{{article['category_id']}}</a></p>
+    <p><a href="/tag?id={{article['category_id']}}"><span class="label label-primary">Primary</span></a></p>
+ </footer>
+ </article>
 
-{% block leftContent %}
-    {% for article in articles %}
-        {% if article.enabled %}
-            <article>
-                <header>
-                    <h1>{{ article.id }} - {{ article.title }}</h1>
-                </header>
-                <p>{{ article.content }}</p>
-                <footer>
-                    {% if article.created_at != '0000-00-00 00:00:00' %}
-                        <time datetime="{{ article.created_at|date('c') }}">{{ article.created_at|date('d-m-Y') }}</time>
-                    {% endif %}
-                </footer>
-            </article>
-        {% endif %}
-    {% endfor %}
-{% endblock %}
-
-{% block rightContent %}
-    <p>zefzejkfnkezf kzefb zekj fbzejkfb zkejfb</p>
-    <p>zefzejkfnkezf kzefb zekj fbzejkfb zkejfb</p>
-{% endblock %}
+{% extends '_footer.html' %}
 
 
 
