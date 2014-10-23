@@ -1,0 +1,16 @@
+{
+    "name": "tinydgzz/php_a2_gr2_twig",
+    "description": "Rendu A2 GR2 Sem2",
+    "require": {
+        "twig/twig": "~1.16",
+        "imagine/imagine": "~0.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrien LOUGE",
+            "email": "adrien.louge@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
