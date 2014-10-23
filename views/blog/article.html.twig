@@ -1,0 +1,31 @@
+{% extends 'Blog/base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - My Articles
+{% endblock %}
+
+{% block leftContent %}
+    {% for article in articles %}
+        {% if article.enabled %}
+            <article>
+                <header>
+                    <h1>{{ article.id }} - {{ article.title }}</h1>
+                </header>
+                <p>{{ article.content }}</p>
+                <footer>
+                    {% if article.created_at != '0000-00-00 00:00:00' %}
+                        <time datetime="{{ article.created_at|date('c') }}">{{ article.created_at|date('d-m-Y') }}</time>
+                    {% endif %}
+                </footer>
+            </article>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block rightContent %}
+    <p>zefzejkfnkezf kzefb zekj fbzejkfb zkejfb</p>
+    <p>zefzejkfnkezf kzefb zekj fbzejkfb zkejfb</p>
+{% endblock %}
+
+
+
